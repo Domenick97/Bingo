@@ -12,7 +12,7 @@ body{
 
 
 
-#topp {
+#balls {
 	width: 96%;
 	background-color: #aaaaaa;
 	float: left;
@@ -23,17 +23,8 @@ body{
 	padding-top: 1%;
 }
 
-table {
-	margin-left: auto;
-	margin-right: auto;
-}​
-
-.tableHeader {
-	padding: 1em;
-	border: 2px #555 solid;
-	text-align: center;
-	font-size: 1em;
-	font-weight: 900;
+.tableHeader{
+	font-weight: bold;
 }
 
 td {
@@ -46,7 +37,7 @@ td {
 #cards {
 	width: 100%;
 	padding: 0%;
-	font-family: Arial;
+	font-family: arial;
 
 }
 
@@ -78,6 +69,10 @@ td {
 	box-shadow: .25em .25em #555555;
 }
 
+#freeSpace{
+	background-color: #888888;
+}
+
 #buttons {
 	width: 96%;
 	background-color: #aaaaaa;
@@ -101,3 +96,7 @@ td {
 .cell:visited{
 	background-color: #dddddd;
 }
+table {
+	margin-left: auto;
+	margin-right: auto;
+}​

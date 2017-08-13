@@ -1,6 +1,5 @@
 window.onload = initAll;
 
-
 function initAll(){
   numbers();
 }
@@ -41,7 +40,6 @@ function theRandom(cell, used) {
   return num;
 }
 
-
 /*
 Checks to see if the array contians the provided element.
 */
@@ -55,4 +53,21 @@ function contains(num, used){
      }
     }
     return false;
+}
+
+/*
+funciton clickFree(){
+  if(document.getElementById("balls").innerHTML.equals("Click your free space to begin")){
+    alert("It worked");
+  } else{
+    alert("yea");
+  }
+}
+*/
+
+/*
+Changes the background color of the space clicked
+*/
+function clickBgChange(obj){
+  obj.style.backgroundColor = "#888888";
 }
