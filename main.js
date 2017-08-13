@@ -55,19 +55,58 @@ function contains(num, used){
     return false;
 }
 
-/*
-funciton clickFree(){
-  if(document.getElementById("balls").innerHTML.equals("Click your free space to begin")){
-    alert("It worked");
-  } else{
-    alert("yea");
+
+function clickSpace(){
+  if(document.getElementById("balls").innerHTML == "Click your free space to begin"){
+    start();
   }
 }
-*/
+
+function start(){
+  document.getElementById("balls").innerHTML = "B4 " + "I24 " + "O70 ";
+}
 
 /*
 Changes the background color of the space clicked
 */
 function clickBgChange(obj){
-  obj.style.backgroundColor = "#888888";
+  if(hasBeenCalled(obj)){
+    obj.style.backgroundColor = "#888888";
+  }
+
+  if(document.getElementById("balls").innerHTML != "Click your free space to begin"){
+    clickSpace();
+  }
+}
+
+/*
+Returns true if the space clicked on has been called, else returns false
+*/
+function hasBeenCalled(obj){
+  var balls = calledBalls();
+
+  for(var k = 0; k < balls.length; k++){
+    if(obj.innerHTML == balls[k].substring(1)){
+      return true;
+    }
+  }
+  return false;
+}
+
+/*
+Returns an array of the balls called
+*/
+function calledBalls(){
+  var balls = [];
+  var stringBalls = document.getElementById("balls").innerHTML;
+  var tempBall = "";
+  for(var j = 0; j < stringBalls.length; j++){
+    if(stringBalls.charAt(j) == " "){
+      balls[balls.length] = tempBall;
+      tempBall = "";
+    } else {
+      tempBall += stringBalls.charAt(j);
+    }
+  }
+  return balls;
 }
