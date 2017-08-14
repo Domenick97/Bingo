@@ -69,7 +69,7 @@ td {
 	box-shadow: .25em .25em #555555;
 }
 
-#freeSpace{
+#freeSpace, #ofreeSpace{
 	background-color: #888888;
 }
 

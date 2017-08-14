@@ -69,7 +69,6 @@ Changes the background color of the space clicked
 function clickBgChange(obj){
   if(hasBeenCalled(obj.innerHTML) && obj.style.backgroundColor != "rgb(136, 136, 136)"){
     obj.style.backgroundColor = "#888888";
-    alert(obj.style.backgroundColor);
     addingBalls();
   }
 }
@@ -120,14 +119,35 @@ function calledBalls(){
 }
 
 function addingBalls(){
-  window.callTimer = setInterval(addBall, 2200);
+  window.callTimer = setInterval(addBall, 100);
 }
 
 function addBall(){
   var tempBall = randomBall();
   document.getElementById("balls").innerHTML += "" + tempBall + " ";
-  if(playerCardHas(tempBall.substring(1))){
+  runOppCard(tempBall.substring(1));
+  if(playerCardHas(tempBall.substring(1)) || playerWon() || oppWon()){
     clearInterval(window.callTimer);
+    if(playerWon()){
+      if(oppWon()){
+        alert("It's A Tie!");
+        if(confirm("Would you like to play again?")){
+          location.reload();
+        }
+      } else {
+        alert("You Won!");
+        if(confirm("Would you like to play again?")){
+          location.reload();
+        }
+      }
+    } else {
+      if(oppWon()){
+        alert("Computer Won!");
+        if(confirm("Would you like to play again?")){
+          location.reload();
+        }
+      }
+    }
   }
 }
 
@@ -136,6 +156,17 @@ function playerCardHas(ball){
     if(t != 13){
       if(document.getElementById("cell" + t).innerHTML == ball){
         return true;
+      }
+    }
+  }
+  return false;
+}
+
+function runOppCard(ball){
+  for(var t = 1; t <= 25; t++){
+    if(t != 13){
+      if(document.getElementById("ocell" + t).innerHTML == ball){
+        document.getElementById("ocell" + t).style.backgroundColor = "#888888";
       }
     }
   }
@@ -167,4 +198,62 @@ function randomBall(){
       }
     }
   }
+}
+
+function playerWon(){
+  var spaceHasBeenCalled = [25];
+  for(var k = 0; k <=24; k++){
+    if(k != 12){
+      if(document.getElementById("cell" + (k + 1)).style.backgroundColor == "rgb(136, 136, 136)"){
+        spaceHasBeenCalled[k] = true;
+      } else {
+        spaceHasBeenCalled[k] = false;
+      }
+    }
+  }
+  if(spaceHasBeenCalled[0] && spaceHasBeenCalled[1] && spaceHasBeenCalled[2] && spaceHasBeenCalled[3] && spaceHasBeenCalled[4]){
+    return true;
+  }
+  if(spaceHasBeenCalled[5] && spaceHasBeenCalled[6] && spaceHasBeenCalled[7] && spaceHasBeenCalled[8] && spaceHasBeenCalled[9]){
+    return true;
+  }
+  if(spaceHasBeenCalled[10] && spaceHasBeenCalled[11] && spaceHasBeenCalled[13] && spaceHasBeenCalled[14]){
+    return true;
+  }
+  if(spaceHasBeenCalled[15] && spaceHasBeenCalled[16] && spaceHasBeenCalled[17] && spaceHasBeenCalled[18] && spaceHasBeenCalled[19]){
+    return true;
+  }
+  if(spaceHasBeenCalled[20] && spaceHasBeenCalled[21] && spaceHasBeenCalled[22] && spaceHasBeenCalled[23] && spaceHasBeenCalled[24]){
+    return true;
+  }
+  return false;
+}
+
+function oppWon(){
+  var spaceHasBeenCalled = [25];
+  for(var k = 0; k <=24; k++){
+    if(k != 12){
+      if(document.getElementById("ocell" + (k + 1)).style.backgroundColor == "rgb(136, 136, 136)"){
+        spaceHasBeenCalled[k] = true;
+      } else {
+        spaceHasBeenCalled[k] = false;
+      }
+    }
+  }
+  if(spaceHasBeenCalled[0] && spaceHasBeenCalled[1] && spaceHasBeenCalled[2] && spaceHasBeenCalled[3] && spaceHasBeenCalled[4]){
+    return true;
+  }
+  if(spaceHasBeenCalled[5] && spaceHasBeenCalled[6] && spaceHasBeenCalled[7] && spaceHasBeenCalled[8] && spaceHasBeenCalled[9]){
+    return true;
+  }
+  if(spaceHasBeenCalled[10] && spaceHasBeenCalled[11] && spaceHasBeenCalled[13] && spaceHasBeenCalled[14]){
+    return true;
+  }
+  if(spaceHasBeenCalled[15] && spaceHasBeenCalled[16] && spaceHasBeenCalled[17] && spaceHasBeenCalled[18] && spaceHasBeenCalled[19]){
+    return true;
+  }
+  if(spaceHasBeenCalled[20] && spaceHasBeenCalled[21] && spaceHasBeenCalled[22] && spaceHasBeenCalled[23] && spaceHasBeenCalled[24]){
+    return true;
+  }
+  return false;
 }
