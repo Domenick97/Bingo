@@ -56,37 +56,45 @@ function contains(num, used){
 }
 
 
-function clickSpace(){
+function clickFree(){
   if(document.getElementById("balls").innerHTML == "Click your free space to begin"){
-    start();
+    document.getElementById("balls").innerHTML = "";
+    addingBalls();
   }
-}
-
-function start(){
-  document.getElementById("balls").innerHTML = "B4 " + "I24 " + "O70 ";
 }
 
 /*
 Changes the background color of the space clicked
 */
 function clickBgChange(obj){
-  if(hasBeenCalled(obj)){
+  if(hasBeenCalled(obj.innerHTML) && obj.style.backgroundColor != "rgb(136, 136, 136)"){
     obj.style.backgroundColor = "#888888";
-  }
-
-  if(document.getElementById("balls").innerHTML != "Click your free space to begin"){
-    clickSpace();
+    alert(obj.style.backgroundColor);
+    addingBalls();
   }
 }
+
+
+
+/*
+Changes the background color of the space clicked
+*/
+function clickO(obj){
+  if(hasBeenCalled(obj.innerHTML)){
+    obj.style.backgroundColor = "#888888";
+  }
+}
+
+
 
 /*
 Returns true if the space clicked on has been called, else returns false
 */
-function hasBeenCalled(obj){
+function hasBeenCalled(num){
   var balls = calledBalls();
 
   for(var k = 0; k < balls.length; k++){
-    if(obj.innerHTML == balls[k].substring(1)){
+    if(num == balls[k].substring(1)){
       return true;
     }
   }
@@ -109,4 +117,54 @@ function calledBalls(){
     }
   }
   return balls;
+}
+
+function addingBalls(){
+  window.callTimer = setInterval(addBall, 2200);
+}
+
+function addBall(){
+  var tempBall = randomBall();
+  document.getElementById("balls").innerHTML += "" + tempBall + " ";
+  if(playerCardHas(tempBall.substring(1))){
+    clearInterval(window.callTimer);
+  }
+}
+
+function playerCardHas(ball){
+  for(var t = 1; t <= 25; t++){
+    if(t != 13){
+      if(document.getElementById("cell" + t).innerHTML == ball){
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function randomBall(){
+  var called = false;
+  while(!called){
+    var num = Math.floor(Math.random() * 75) + 1;
+    if(!hasBeenCalled(num)){
+      called = true;
+    }
+  }
+  if(num <= 15){
+    return "B" + num;
+  } else {
+    if(num <= 30){
+      return "I" + num;
+    } else {
+      if(num <= 45){
+        return "N" + num;
+      } else {
+        if(num <= 60){
+          return "G" + num;
+        } else {
+          return "O" + num;
+        }
+      }
+    }
+  }
 }
