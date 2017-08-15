@@ -64,7 +64,7 @@ function clickCell(obj){
       document.getElementById("balls").innerHTML = "";
     }
     obj.style.backgroundColor = "#888888";
-    window.callTimer = setInterval(addingBalls, 300);
+    window.callTimer = setInterval(addingBalls, 2000);
   }
 }
 
