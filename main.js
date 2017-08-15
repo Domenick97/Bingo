@@ -20,7 +20,6 @@ function numbers(){
       document.getElementById("ocell" + (j+1)).innerHTML = theRandom(j, used);
     }
   }
-
 }
 
 /*
@@ -55,36 +54,19 @@ function contains(num, used){
     return false;
 }
 
-
-function clickFree(){
-  if(document.getElementById("balls").innerHTML == "Click your free space to begin"){
-    document.getElementById("balls").innerHTML = "";
-    addingBalls();
-  }
-}
-
 /*
 Changes the background color of the space clicked
 */
-function clickBgChange(obj){
-  if(hasBeenCalled(obj.innerHTML) && obj.style.backgroundColor != "rgb(136, 136, 136)"){
+function clickCell(obj){
+  var banner = document.getElementById("balls").innerHTML;
+  if(hasBeenCalled(obj.innerHTML) && obj.style.backgroundColor != "rgb(136, 136, 136)" || banner == "Click your free space to begin" && obj.innerHTML == "Free"){
+    if(banner == "Click your free space to begin" && obj.innerHTML == "Free"){
+      document.getElementById("balls").innerHTML = "";
+    }
     obj.style.backgroundColor = "#888888";
-    addingBalls();
+    window.callTimer = setInterval(addingBalls, 300);
   }
 }
-
-
-
-/*
-Changes the background color of the space clicked
-*/
-function clickO(obj){
-  if(hasBeenCalled(obj.innerHTML)){
-    obj.style.backgroundColor = "#888888";
-  }
-}
-
-
 
 /*
 Returns true if the space clicked on has been called, else returns false
@@ -118,18 +100,16 @@ function calledBalls(){
   return balls;
 }
 
+/*
+Adds balls with a set interval between each
+*/
 function addingBalls(){
-  window.callTimer = setInterval(addBall, 100);
-}
-
-function addBall(){
-  var tempBall = randomBall();
-  document.getElementById("balls").innerHTML += "" + tempBall + " ";
-  runOppCard(tempBall.substring(1));
-  if(playerCardHas(tempBall.substring(1)) || playerWon() || oppWon()){
+  addBall();
+  var ball = calledBalls();
+  if(playerCardHas(ball[ball.length -1].substring(1)) || winner("cell") || winner("ocell")){
     clearInterval(window.callTimer);
-    if(playerWon()){
-      if(oppWon()){
+    if(winner("cell")){
+      if(winner("ocell")){
         alert("It's A Tie!");
         if(confirm("Would you like to play again?")){
           location.reload();
@@ -141,7 +121,7 @@ function addBall(){
         }
       }
     } else {
-      if(oppWon()){
+      if(winner("ocell")){
         alert("Computer Won!");
         if(confirm("Would you like to play again?")){
           location.reload();
@@ -151,6 +131,18 @@ function addBall(){
   }
 }
 
+/*
+Calls a ball stopping the timer if it is found in the players card or if the player or computer win.
+*/
+function addBall(){
+  var tempBall = randomBall();
+  runOppCard(tempBall.substring(1));
+  document.getElementById("balls").innerHTML += "" + tempBall + " ";
+}
+
+/*
+Returns true if the players card has the ball that was called
+*/
 function playerCardHas(ball){
   for(var t = 1; t <= 25; t++){
     if(t != 13){
@@ -162,6 +154,9 @@ function playerCardHas(ball){
   return false;
 }
 
+/*
+If the computers card has the ball it fills in the space
+*/
 function runOppCard(ball){
   for(var t = 1; t <= 25; t++){
     if(t != 13){
@@ -170,9 +165,11 @@ function runOppCard(ball){
       }
     }
   }
-  return false;
 }
 
+/*
+Picks a random ball that has not already been called, letter and number combined.
+*/
 function randomBall(){
   var called = false;
   while(!called){
@@ -200,17 +197,21 @@ function randomBall(){
   }
 }
 
-function playerWon(){
+/*
+Determines if the card pased through won
+*/
+function winner(name){
   var spaceHasBeenCalled = [25];
   for(var k = 0; k <=24; k++){
     if(k != 12){
-      if(document.getElementById("cell" + (k + 1)).style.backgroundColor == "rgb(136, 136, 136)"){
+      if(document.getElementById(name + (k + 1)).style.backgroundColor == "rgb(136, 136, 136)"){
         spaceHasBeenCalled[k] = true;
       } else {
         spaceHasBeenCalled[k] = false;
       }
     }
   }
+  //Horizontal
   if(spaceHasBeenCalled[0] && spaceHasBeenCalled[1] && spaceHasBeenCalled[2] && spaceHasBeenCalled[3] && spaceHasBeenCalled[4]){
     return true;
   }
@@ -226,33 +227,27 @@ function playerWon(){
   if(spaceHasBeenCalled[20] && spaceHasBeenCalled[21] && spaceHasBeenCalled[22] && spaceHasBeenCalled[23] && spaceHasBeenCalled[24]){
     return true;
   }
-  return false;
-}
-
-function oppWon(){
-  var spaceHasBeenCalled = [25];
-  for(var k = 0; k <=24; k++){
-    if(k != 12){
-      if(document.getElementById("ocell" + (k + 1)).style.backgroundColor == "rgb(136, 136, 136)"){
-        spaceHasBeenCalled[k] = true;
-      } else {
-        spaceHasBeenCalled[k] = false;
-      }
-    }
-  }
-  if(spaceHasBeenCalled[0] && spaceHasBeenCalled[1] && spaceHasBeenCalled[2] && spaceHasBeenCalled[3] && spaceHasBeenCalled[4]){
+  //Vertical
+  if(spaceHasBeenCalled[0] && spaceHasBeenCalled[5] && spaceHasBeenCalled[10] && spaceHasBeenCalled[15] && spaceHasBeenCalled[20]){
     return true;
   }
-  if(spaceHasBeenCalled[5] && spaceHasBeenCalled[6] && spaceHasBeenCalled[7] && spaceHasBeenCalled[8] && spaceHasBeenCalled[9]){
+  if(spaceHasBeenCalled[1] && spaceHasBeenCalled[6] && spaceHasBeenCalled[11] && spaceHasBeenCalled[16] && spaceHasBeenCalled[21]){
     return true;
   }
-  if(spaceHasBeenCalled[10] && spaceHasBeenCalled[11] && spaceHasBeenCalled[13] && spaceHasBeenCalled[14]){
+  if(spaceHasBeenCalled[2] && spaceHasBeenCalled[7] && spaceHasBeenCalled[17] && spaceHasBeenCalled[22]){
     return true;
   }
-  if(spaceHasBeenCalled[15] && spaceHasBeenCalled[16] && spaceHasBeenCalled[17] && spaceHasBeenCalled[18] && spaceHasBeenCalled[19]){
+  if(spaceHasBeenCalled[3] && spaceHasBeenCalled[8] && spaceHasBeenCalled[13] && spaceHasBeenCalled[18] && spaceHasBeenCalled[23]){
     return true;
   }
-  if(spaceHasBeenCalled[20] && spaceHasBeenCalled[21] && spaceHasBeenCalled[22] && spaceHasBeenCalled[23] && spaceHasBeenCalled[24]){
+  if(spaceHasBeenCalled[4] && spaceHasBeenCalled[9] && spaceHasBeenCalled[14] && spaceHasBeenCalled[19] && spaceHasBeenCalled[24]){
+    return true;
+  }
+  //Diagonal
+  if(spaceHasBeenCalled[0] && spaceHasBeenCalled[6] && spaceHasBeenCalled[18] && spaceHasBeenCalled[24]){
+    return true;
+  }
+  if(spaceHasBeenCalled[4] && spaceHasBeenCalled[8] && spaceHasBeenCalled[16] && spaceHasBeenCalled[20]){
     return true;
   }
   return false;

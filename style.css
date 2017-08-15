@@ -1,5 +1,5 @@
 html{
-	background-color: #fdfdfd;
+	background-color: #fafafa;
 }
 
 body{
@@ -14,6 +14,7 @@ body{
 
 #balls {
 	width: 96%;
+	height: 1.2em;
 	background-color: #aaaaaa;
 	float: left;
 	margin: 1%;
@@ -21,6 +22,8 @@ body{
 	border-radius: 5px 5px 5px 5px;
 	padding-bottom: 1%;
 	padding-top: 1%;
+	font-weight: 600;
+	font-size: 1.2em;
 }
 
 .tableHeader{
@@ -69,7 +72,7 @@ td {
 	box-shadow: .25em .25em #555555;
 }
 
-#freeSpace, #ofreeSpace{
+#ofreeSpace{
 	background-color: #888888;
 }
 
