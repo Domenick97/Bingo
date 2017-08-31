@@ -9,11 +9,11 @@
 
 <body id="Mainly">
 
-<div ><p id="balls">Click your free space to begin</p></div>
+<div id="topbar"><p id="balls">Click your free space to begin</p></div>
 
 <div id="cards">
 	<div id="userCard">
-		<table>
+		<table id="taber">
 			<tr>
 				<td width=20% class="tableHeader" >B</td>
 				<td width=20% class="tableHeader" >I</td>
@@ -110,6 +110,17 @@
 	</div>
 </div>
 <div id="buttons"><div id="continue"></div></div>
+<script language="javascript">
+        function autoResizeDiv()
+        {
+					if(window.innerWidth < window.innerHeight){
+						document.getElementById('userCard').style.width = document.getElementById('taber').offsetWidth +50 +'px' ;
 
+						document.getElementById('oppCard').style.width = document.getElementById('taber').offsetWidth +50 +'px' ;
+					}
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+</script>
 </body>
 </html>
