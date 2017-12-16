@@ -2,6 +2,24 @@ window.onload = initAll;
 
 function initAll(){
   numbers();
+  //setupCells();
+}
+
+function setupCells(){
+
+
+
+  for( var i = 5; i < document.getElementsByTagName('table').length; i++ ){
+    for(var head = 0; head < 5; head++){
+      document.getElementsByTagName('td')[head].innerHTML = "Test";
+    }
+
+
+  }
+  /*
+  for( var i = 5; i < document.getElementsByTagName('td').length; i++ ){
+    document.getElementsByTagName('td')[i].innerHTML = "Test";
+  }*/
 }
 
 /*
@@ -11,13 +29,19 @@ function numbers(){
   var used = [];
   for(var j = 0; j <= 24; j++){
     if(j != 12){
-      document.getElementById("cell" + (j+1)).innerHTML = theRandom(j, used);
+      var cell = document.getElementById("cell" + (j+1));
+      cell.val = theRandom(j, used);
+      cell.innerHTML = cell.val;
+      cell.dot = false;
     }
   }
   used = [];
   for(var j = 0; j <= 24; j++){
     if(j != 12){
-      document.getElementById("ocell" + (j+1)).innerHTML = theRandom(j, used);
+      var cell = document.getElementById("ocell" + (j+1));
+      cell.val = theRandom(j, used);
+      cell.innerHTML = cell.val;
+      cell.dot = false;
     }
   }
 }
