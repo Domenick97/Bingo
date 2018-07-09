@@ -1,0 +1,122 @@
+body{
+	background-color: #ccd0d7;
+	margin: 0;
+	font: 15px/1.5 arial;
+	padding: 0;
+}
+
+.container{
+  width: 96%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header .container{
+	background-color: #66686b;
+	min-height: 40px;
+	border-radius: 4px 4px 4px 4px;
+	margin-top: 1%;
+	padding: .5%;
+
+	color: #ffffff;
+}
+
+header p{
+	padding: 10px;
+	text-align: center;
+	margin: 0;
+	font-size: 130%;
+	font-weight: bold;
+	vertical-align: middle;
+
+}
+
+.tableHeader{
+	font-weight: bold;
+}
+
+td {
+	padding: 1em;
+	border: 2px #555 solid;
+	text-align: center;
+	font-size: 1em;
+}
+
+#cards {
+	width: 100%;
+	padding: 1% 0 2% 0;
+	margin: auto;
+	font-family: arial;
+	text-align: center;
+
+}
+
+#userCard {
+	display: inline-block;
+	width: 600px;
+	padding-top: 2%;
+	margin: 2%;
+	background-color: #61aed1;
+	/*
+	background-color: #ddf69f;*/
+	/*float:left;*/
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.5em;
+	border-radius: 1em 1em 1em 1em;
+	box-shadow: .25em .25em #555555;
+}
+
+#oppCard {
+	display: inline-block;
+	width: 600px;
+	padding-top: 2%;
+	margin: 2%;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.5em;
+	background-color: #d5964e;
+	/*background-color: #ffaa88;*/
+	border-radius: 1em 1em 1em 1em;
+	box-shadow: .25em .25em #555555;
+}
+
+#ofreeSpace{
+	background-color: #888888;
+}
+
+footer .container{
+	width: 100%;
+	background-color: #66686b;
+
+	text-align: center;
+	font-size: 125%;
+}
+
+.cell:hover{
+	background-color: #dddddd;
+}
+
+.cell:visited{
+	background-color: #dddddd;
+}
+table {
+	margin: auto;
+	width: 90%;
+}​
+
+
+
+#links{
+	float: left;
+  padding: 0;
+  margin: auto;
+}
+
+#links img{
+
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  vertical-align: middle;
+}
