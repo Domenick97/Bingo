@@ -1,14 +1,8 @@
-body{
+body {
   background-color: #ccd0d7;
   margin: 0;
   font: 15px/1.5 arial;
   padding: 0;
-}
-
-.container{
-  width: 96%;
-  margin: auto;
-  overflow: hidden;
 }
 
 header .container{
@@ -31,8 +25,12 @@ header p{
 
 }
 
-.tableHeader{
-  font-weight: bold;
+th{
+  width: 20%;
+  padding: 1em;
+  border: 2px #555 solid;
+  text-align: center;
+  font-size: 1em;
 }
 
 td {
@@ -85,13 +83,6 @@ td {
   background-color: #888888;
 }
 
-footer .container{
-  width: 100%;
-  background-color: #66686b;
-
-  text-align: center;
-  font-size: 125%;
-}
 
 .cell:hover{
   background-color: #dddddd;
