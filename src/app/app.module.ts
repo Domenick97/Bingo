@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AlertModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BingoComponent } from './bingo/bingo.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
