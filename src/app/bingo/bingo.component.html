@@ -7,29 +7,17 @@
 <section class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-6">
-      <div id="userCard">
-        <table id="taber">
+      <div id="userCard" class="card">
+        <table>
           <tr>
             <th>B</th>
-            <td class="tableHeader">I</td>
-            <td class="tableHeader">N</td>
-            <td class="tableHeader">G</td>
-            <td class="tableHeader">O</td>
+            <th>I</th>
+            <th>N</th>
+            <th>G</th>
+            <th>O</th>
           </tr>
-          <tr>
-            <td *ngFor="let cell of userCard.cells[0]" class="cell">{{cell.value}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let cell of userCard.cells[1]" class="cell">{{cell.value}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let cell of userCard.cells[2]" class="cell">{{cell.value}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let cell of userCard.cells[3]" class="cell">{{cell.value}}</td>
-          </tr>
-          <tr>
-            <td *ngFor="let cell of userCard.cells[4]" class="cell">{{cell.value}}</td>
+          <tr *ngFor="let cardRow of userCard.cells">
+            <td *ngFor="let cell of cardRow" class="cell">{{cell.value}}</td>
           </tr>
         </table>
         <p>Your card</p>
@@ -37,49 +25,17 @@
     </div>
 
     <div class="col-md-6">
-      <div id="oppCard">
+      <div id="oppCard" class="card">
         <table>
           <tr>
-            <td width=20% class="tableHeader">B</td>
-            <td width=20% class="tableHeader">I</td>
-            <td width=20% class="tableHeader">N</td>
-            <td width=20% class="tableHeader">G</td>
-            <td width=20% class="tableHeader">O</td>
+            <th>B</th>
+            <th>I</th>
+            <th>N</th>
+            <th>G</th>
+            <th>O</th>
           </tr>
-          <tr>
-            <td class="cell" id="ocell1">&nbsp;</td>
-            <td class="cell" id="ocell2">&nbsp;</td>
-            <td class="cell" id="ocell3">&nbsp;</td>
-            <td class="cell" id="ocell4">&nbsp;</td>
-            <td class="cell" id="ocell5">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="cell" id="ocell6">&nbsp;</td>
-            <td class="cell" id="ocell7">&nbsp;</td>
-            <td class="cell" id="ocell8">&nbsp;</td>
-            <td class="cell" id="ocell9">&nbsp;</td>
-            <td class="cell" id="ocell10">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="cell" id="ocell11">&nbsp;</td>
-            <td class="cell" id="ocell12">&nbsp;</td>
-            <td class="cell" id="ofreeSpace">Free</td>
-            <td class="cell" id="ocell14">&nbsp;</td>
-            <td class="cell" id="ocell15">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="cell" id="ocell16">&nbsp;</td>
-            <td class="cell" id="ocell17">&nbsp;</td>
-            <td class="cell" id="ocell18">&nbsp;</td>
-            <td class="cell" id="ocell19">&nbsp;</td>
-            <td class="cell" id="ocell20">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="cell" id="ocell21">&nbsp;</td>
-            <td class="cell" id="ocell22">&nbsp;</td>
-            <td class="cell" id="ocell23">&nbsp;</td>
-            <td class="cell" id="ocell24">&nbsp;</td>
-            <td class="cell" id="ocell25">&nbsp;</td>
+          <tr *ngFor="let cardRow of computerCard.cells">
+          <td *ngFor="let cell of cardRow" class="cell">{{cell.value}}</td>
           </tr>
         </table>
         <p>Computer's card</p>
