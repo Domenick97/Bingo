@@ -1,0 +1,42 @@
+<style>
+  nav {
+    background-color: #999;
+  }
+  nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li{
+    background-color: #999;
+    display: inline-block;
+    padding: 10px;
+  }
+
+  nav li:hover{
+    background-color: #555;
+    cursor: pointer;
+  }
+</style>
+
+<section class="container-fluid" style="margin-bottom: 600px">
+  <div class="row" style="background-color: #fdae14 ">
+    <div style="margin: 3em auto 5em auto; ">
+      <h1>Welcome to bingo</h1>
+    </div>
+  </div>
+  <nav class="row">
+  <ul>
+    <li>Game Settings</li>
+    <li style="border-left: solid 1px #888;">Player Settings</li>
+    <li style="border-left: solid 1px #888;">Player Records</li>
+  </ul>
+</nav>
+
+  <div class="row justify-content-center" style="margin-top: 4em;">
+    <button class="btn btn-lg btn-success" (click)="navToPlayGame()">
+      Play Game
+    </button>
+  </div>
+</section>

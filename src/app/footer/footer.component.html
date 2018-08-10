@@ -1,22 +1,33 @@
-<footer>
-  <div class="container">
-    <div id="prompt">
-      Check out other projects I have worked on
-    </div>
-    <div id="links">
-      <a href="https://github.com/Domenick97" target="_blank" id="first"><img src="../assets/github.png" alt="GitHub"/></a>
-      <a href="https://linkedin.com/in/domenickd" target="_blank" ><img src="../assets/lin.png" alt="LinkedIn"/></a>
+<ng-template #privacyPolicy let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Privacy Policy</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Like many other website developers, I use Google Analytics on domenickdibiase.com. Google Analytics is software that fetchs data about my visitors (you). With it I use the data to improve my site to better suite my vistitors.</p>
+    <p class="prompt">What does Google Analytics record?</p>
+    <p>Google Analytics records what website you came from to get here, how long you stay here for, what kind of computer you're using, and much more anonymous infromation.</p>
+    <p>With this, all of my activity falls within the bounds of the /Google Analytics Terms of Service/.</p>
+    <p class="prompt">Want to opt out of tracking?</p>
+    <p>Refer to Google's Privacy and Terms page to learn more about how to opt out of Google's advertising tracking cookie.</p>
+    <p class="prompt"><br/>&copy; Copyright 2017</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
 
+<footer>
+  <div class="container-fluid">
+    <div class="footer-content">
+      <p><span id="privacy-policy-toggle" (click)="openPrivacyPolicyModal(privacyPolicy)">Privacy Policy</span><span style="color:#444"> |</span> Check out other projects I have worked on</p>
     </div>
-    <div>
-      <p class="prompt">Privacy Policy</p>
-      <p>Like many other website developers, I use Google Analytics on domenickdibiase.com. Google Analytics is software that fetchs data about my visitors (you). With it I use the data to improve my site to better suite my vistitors.</p>
-      <p class="prompt">What does Google Analytics record?</p>
-      <p>Google Analytics records what website you came from to get here, how long you stay here for, what kind of computer you're using, and much more anonymous infromation.</p>
-      <p>With this, all of my activity falls within the bounds of the /Google Analytics Terms of Service/.</p>
-      <p class="prompt">Want to opt out of tracking?</p>
-      <p>Refer to Google's Privacy and Terms page to learn more about how to opt out of Google's advertising tracking cookie.</p>
-      <p class="prompt"><br/>&copy; Copyright 2017</p>
+
+    <div class="footer-content" id="links">
+      <a class="link-image" href="https://github.com/Domenick97" target="_blank" id="first"><img src="../assets/github.png" alt="GitHub"/></a>
+      <a class="link-image" href="https://linkedin.com/in/domenickd" target="_blank" ><img src="../assets/lin.png" alt="LinkedIn"/></a>
     </div>
   </div>
 </footer>

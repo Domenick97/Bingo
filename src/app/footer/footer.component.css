@@ -1,7 +1,29 @@
-footer .container{
-  width: 100%;
+footer {
+  padding: 10px;
   background-color: #66686b;
-
   text-align: center;
-  font-size: 125%;
+}
+
+#privacy-policy-toggle {
+  color: #e5e5e5;
+}
+
+#privacy-policy-toggle:hover {
+  cursor: pointer;
+  color: #999;
+}
+
+.footer-content {
+  display: inline-block;
+  color: #e5e5e5;
+}
+
+.link-image {
+  margin: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+#links {
+  margin-left: 15px;
 }
