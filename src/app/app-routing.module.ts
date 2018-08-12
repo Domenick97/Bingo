@@ -5,9 +5,9 @@ import {LandingPageComponent} from './landing-page/landing-page.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/bingo', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'bingo/play', component: BingoComponent },
-  { path: 'bingo', component: LandingPageComponent }
+  { path: 'home', component: LandingPageComponent }
 ];
 
 @NgModule({
