@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {BingoCell} from '../models/bingo-cell';
-import {BingoCard} from '../models/bingo-card';
+import {BingoCell} from '../model/bingo-cell';
+import {BingoCard} from '../model/bingo-card';
 
 @Component({
   selector: 'app-bingo',

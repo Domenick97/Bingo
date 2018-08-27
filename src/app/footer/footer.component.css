@@ -1,11 +1,12 @@
 footer {
   padding: 10px;
-  background-color: #66686b;
+  /*background-color: #66686b;*/
+  background-color: #006e90;
   text-align: center;
 }
 
 #privacy-policy-toggle {
-  color: #e5e5e5;
+  color: #fff;
 }
 
 #privacy-policy-toggle:hover {
@@ -15,7 +16,7 @@ footer {
 
 .footer-content {
   display: inline-block;
-  color: #e5e5e5;
+  color: #fff;
 }
 
 .link-image {
