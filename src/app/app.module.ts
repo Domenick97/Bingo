@@ -8,13 +8,17 @@ import {BingoComponent} from './bingo/bingo.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FooterComponent} from './footer/footer.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';
+import { GameSettingsComponent } from './game-settings/game-settings.component';
+import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BingoComponent,
     FooterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    GameSettingsComponent,
+    PlayerSettingsComponent
   ],
   imports: [
     BrowserModule,
