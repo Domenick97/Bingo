@@ -1,0 +1,53 @@
+
+<head>
+  <title>Settings</title>
+</head>
+
+<style>
+.options {
+  background-color: #C2938D;
+  border-radius: 5px 5px 0 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+}
+
+li:hover {
+  background-color: #9bb5c0;
+  cursor: pointer;
+}</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <button class="btn btn-secondary" (click)="navToHome()">Back</button>
+    </div>
+    <div class="row">
+      <h4 style="margin:auto">Settings</h4>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col options">
+        <ul>
+          <li name='gameTab'>Game</li>
+          <li name='playerTab'>Player</li>
+          <li name='multiTab'>Multiplayer</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <app-game-settings [hidden]="tab != 1"></app-game-settings>
+      <app-player-settings [hidden]="tab != 2"></app-player-settings>
+    </div>
+  </div>
+</body>

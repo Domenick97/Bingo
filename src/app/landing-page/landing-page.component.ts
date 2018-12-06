@@ -18,4 +18,7 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['/bingo/play'])
   }
 
+  navToSettings(){
+    this.router.navigate(['/bingo/settings'])
+  }
 }
