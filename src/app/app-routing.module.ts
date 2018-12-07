@@ -6,9 +6,8 @@ import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'bingo/play', component: BingoComponent },
-  { path: 'home', component: LandingPageComponent },
+  { path: '', component: LandingPageComponent },
   { path: 'bingo/settings', component: SettingsComponent }
 ];
 

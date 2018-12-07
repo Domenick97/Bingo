@@ -18,6 +18,6 @@ export class SettingsComponent implements OnInit {
   }
 
   navToHome(){
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
 }
