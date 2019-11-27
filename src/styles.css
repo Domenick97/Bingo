@@ -1,4 +1,11 @@
-body {
+html, body {
   background-color: #111;
   font: 15px/1.5 arial;
+  height: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

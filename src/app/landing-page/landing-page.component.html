@@ -2,52 +2,59 @@
   nav {
     background-color: #adcad6;
   }
-  nav ul{
+
+  nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  nav li{
+  nav li {
     display: inline-block;
     padding: 10px;
   }
 
-  nav li:hover{
+  nav li:hover {
     background-color: #9bb5c0;
     cursor: pointer;
   }
 
-  #play-btn{
+  #play-btn {
     background-color: #41bbd9;
     transition: .4s;
   }
 
-  #play-btn:hover{
+  #play-btn:hover {
     /*background-color: #2d8297;*/
     /*background-color: #3aa8c3;*/
     background-color: #3495ad;
   }
 </style>
-
-<section class="container-fluid" style="margin-bottom: 530px">
+<section class="container-fluid">
   <div class="row" style="background-color: #99c24d ">
     <div style="margin: 6em auto 6em auto; ">
       <h1>Ultimate Online Bingo</h1>
     </div>
   </div>
   <nav class="row">
-  <ul>
-    <li>Game Settings</li>
-    <li style="border-left: solid 1px #8aa1ab;">Player Settings</li>
-    <li style="border-left: solid 1px #8aa1ab;">Player Records</li>
-    <li style="border-left: solid 1px #8aa1ab;">Multiplayer</li>
-  </ul>
-</nav>
+    <ul>
+      <li>Player Records</li>
+      <li style="border-left: solid 1px #8aa1ab;">Multiplayer</li>
+      <li style="height: 44px;border-left: solid 1px #8aa1ab;" (click)="navToSettings()"><img src="../assets/settings.png" height="24px" width="24px"
+          style="margin:0;padding:0" /></li>
+    </ul>
+  </nav>
 
   <div class="row justify-content-center" style="margin-top: 4em;">
     <button class="btn btn-lg" id="play-btn" (click)="navToPlayGame()">
       Play Game
     </button>
+  </div>
+
+  <div>
+    <div class="col-md-4">
+      Player Wins: 0
+    </div>
+    
   </div>
 </section>
