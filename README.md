@@ -8,10 +8,9 @@ While I coded the game to be equally random for the player and the computer, tes
 
 ### How to play
 
-~~Go to: [Bingo](https://domenick97.github.io/Bingo/) (https://domenick97.github.io/Bingo/)~~
+Go to: [Bingo](https://domenick97.github.io/Bingo/) (https://domenick97.github.io/Bingo/)
 
-> The bingo page is under major UI re-construction and is currently unavailable at the links above.  
-> To play the older version please visit: http://domenickdibiase.com/bingo
+> The bingo project is under major UI re-construction and might be unavailable at the links above.  
 
 **or**
 
@@ -20,5 +19,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 * The app will automatically reload if you change any of the source files.
 
 
+### How to deploy with GitHub Pages
+```
+ng deploy --base-href=Bingo
+```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+
+### Versions
+Angular CLI: 9.1.7  
+Node: 14.4.0  
+Angular: 9.1.9
