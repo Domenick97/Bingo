@@ -24,8 +24,23 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 npm deploy
 ```
 
+### Deploying to Heroku
+To deploy the lastest verison of the bingo server first login to Heroku using the Heroku CLI
+```
+heroku login
+```
+Then deploy the lastest verison of master to Heroku
+```
+git push heroku master
+```
+
+To check logs for errors or debugging purposes
+```
+heroku logs --tail
+```
 
 ### Versions
 Angular CLI: 9.1.7  
 Node: 14.4.0  
 Angular: 9.1.9
+Heroku CLI: 7.42.1
