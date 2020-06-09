@@ -16,6 +16,13 @@ app.get('/', (req, res) => {
   numOfRequests++;
   return res.send('Received a GET HTTP method' + numOfRequests);
 });
+
+app.get('/isReady', (req, res) => {
+  numOfRequests++;
+  return res.send(numOfRequests<5);
+});
+
+
 // var io = require('socket.io')(server);
 
 // io.on('connection', function(socket) {
