@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartyService } from '../services/party.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public isReady = true;
 
-  constructor() { }
+  constructor(private partyService: PartyService) { }
 
   ngOnInit(): void {
+
+    this.partyService.isPartyReady().subscribe(x=>{
+      console.log("IsReady: ", x);
+      this.isReady = x;
+    })
   }
 
 }

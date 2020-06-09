@@ -1,5 +1,6 @@
 <div id="logo-banner">Welcome Div</div>
 <div id="dashboard-body">body div
+  {{isReady?'Less than 5':'5 or more'}}
   <div>
     <a routerLink="/play" routerLinkActive="active"><button href="" class="play-button"><fa-icon [icon]="['fas', 'desktop']"></fa-icon>Play Against Computer</button></a>
     <button class="play-button"><fa-icon [icon]="['fas', 'users']"></fa-icon>Play Against Friend</button>
