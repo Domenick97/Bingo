@@ -5,6 +5,7 @@ var app = express();
 var http = require('http');
 var server = http.Server(app);
 
+var numOfRequests = 0;
 // app.use(express.static('client'));
 
 server.listen(PORT, function() {
@@ -12,7 +13,8 @@ server.listen(PORT, function() {
 });
 
 app.get('/', (req, res) => {
-  return res.send('Received a GET HTTP method');
+  numOfRequests++;
+  return res.send('Received a GET HTTP method' + numOfRequests);
 });
 // var io = require('socket.io')(server);
 
