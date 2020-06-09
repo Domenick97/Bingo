@@ -1,0 +1,23 @@
+{
+  "name": "bingo",
+  "version": "1.0.0",
+  "description": "Play a game of bingo against a computer to see if you can win.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domenick97/Bingo.git"
+  },
+  "author": "Domenick DiBiase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Domenick97/Bingo/issues"
+  },
+  "homepage": "https://github.com/Domenick97/Bingo#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
