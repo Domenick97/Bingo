@@ -1,0 +1,46 @@
+@import '../../style-variables.scss';
+
+#logo-banner {
+  width: 100%;
+  height: 100px;
+  background-color: $two;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+#dashboard-body {
+  background-color: $three;
+  font-family: 'Mukta', sans-serif;
+}
+
+#header, #header1, #header2, #header3, #header4, #header5 {
+  height: 50px;
+  width: 400px;
+}
+
+#header {
+  background-color: $one;
+}
+#header1 {
+  background-color: $two;
+}
+#header2 {
+  background-color: $three;
+}
+#header3 {
+  background-color: $four;
+}
+#header4 {
+  background-color: $five;
+}
+#header5 {
+  background-color: $six;
+}
+
+.play-button {
+  background-color: $four;
+  border: solid 2px dimgray;
+  border-radius: 8px;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+  width: 100px;
+}

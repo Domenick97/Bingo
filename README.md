@@ -21,7 +21,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ### How to deploy with GitHub Pages
 ```
-ng deploy --base-href=Bingo
+npm deploy
 ```
 
 
